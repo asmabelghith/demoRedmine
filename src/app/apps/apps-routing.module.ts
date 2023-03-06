@@ -9,6 +9,7 @@ import { ProjectDetailsComponent } from './projects/project-details/project-deta
 import { OrdersListComponent } from './e-commerce/orders-list/orders-list.component';
 import { ProductsListComponent } from './e-commerce/products-list/products-list.component';
 import { ProductComponent } from './e-commerce/product/product.component';
+import { EmployeesComponent } from './Employees/employees/employees.component';
 
 const routes: Routes = [
     {
@@ -18,6 +19,11 @@ const routes: Routes = [
             title: 'Chat',
             headerDisplay: "none"
         }
+    },
+    {
+        path: 'employees',
+        component: EmployeesComponent
+        
     },
     {
         path: 'file-manager',
@@ -77,11 +83,13 @@ const routes: Routes = [
             {
                 path: 'product',
                 component: ProductComponent,
+            
                 data: {
                     title: 'Product',
                     headerDisplay: "none"
                 }
             },
+            
             {
                 path: 'products-list',
                 component: ProductsListComponent,

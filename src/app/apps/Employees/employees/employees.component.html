@@ -1,0 +1,33 @@
+<h2>Employees Form</h2>
+<button  (click)="createEmployees()">Create Employees</button>
+<table> 
+  <thead>
+    <tr>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Gender</th>
+      <th>Description</th>
+      <th>Adress</th>
+      <th>Picture</th>
+      <th>BirthdayDate</th>
+      <th>Email</th>
+      <th>PhoneNumber</th>
+      <th>Login</th>
+      <th>Password</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let items of Employees">
+        <td>{{items.FirstName}}</td>
+        <td>{{items.LastName}}</td>
+        <td>{{items.Gender}}</td>
+        <td>{{items.Description}}</td>
+        <td>{{items.Picture}}</td>
+        <td>{{items.BirthdayDate}}</td>
+        <td>{{items.Email}}</td>
+        <td>{{items.PhoneNumber}}</td>
+        <td>{{items.Login}}</td>
+        <td>{{items.Password}}</td>
+  
+  </tbody>
+</table>
