@@ -42,6 +42,7 @@ import { OrdersListComponent } from './e-commerce/orders-list/orders-list.compon
 import { ProductsListComponent } from './e-commerce/products-list/products-list.component';
 import { ProductComponent } from './e-commerce/product/product.component';
 import { EmployeesComponent } from './Employees/employees/employees.component';
+import { EmployeesDetailsComponent } from './Employees/EmployeesDetails/employees-details/employees-details.component';
 
 
 const antdModule = [
@@ -88,7 +89,8 @@ const antdModule = [
         OrdersListComponent,
         ProductsListComponent,
         ProductComponent,
-        EmployeesComponent
+        EmployeesComponent,
+        EmployeesDetailsComponent
     ],
     providers: [
         ThemeConstantService,

@@ -1,33 +1,58 @@
-<h2>Employees Form</h2>
-<button  (click)="createEmployees()">Create Employees</button>
-<table> 
-  <thead>
-    <tr>
-      <th>FirstName</th>
-      <th>LastName</th>
-      <th>Gender</th>
-      <th>Description</th>
-      <th>Adress</th>
-      <th>Picture</th>
-      <th>BirthdayDate</th>
-      <th>Email</th>
-      <th>PhoneNumber</th>
-      <th>Login</th>
-      <th>Password</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let items of Employees">
-        <td>{{items.FirstName}}</td>
-        <td>{{items.LastName}}</td>
-        <td>{{items.Gender}}</td>
-        <td>{{items.Description}}</td>
-        <td>{{items.Picture}}</td>
-        <td>{{items.BirthdayDate}}</td>
-        <td>{{items.Email}}</td>
-        <td>{{items.PhoneNumber}}</td>
-        <td>{{items.Login}}</td>
-        <td>{{items.Password}}</td>
+<h1>Create Employees</h1>
+<form [formGroup]="myForm" (ngSubmit)="addEmployee()">
+  <nz-form-label [nzSpan]="7" nzRequired>FirstName</nz-form-label>
+  <input nz-input type="text"  formControlName="firstName" placeholder="FirstName" required> 
+   <div *ngIf="myForm.get('firstName').touched && myForm.get('firstName').hasError('required')"> this input FirstName is required</div><br>
+   <nz-form-label [nzSpan]="7" nzRequired>LastName</nz-form-label>
+   <input nz-input type="text" formControlName="lastName" placeholder="LastName" required>
+  <div *ngIf="myForm.get('lastName').touched && myForm.get('lastName').hasError('required')"> this input LastName is required</div> <br>
   
-  </tbody>
-</table>
+  <nz-form-label [nzSpan]="7" nzRequired>Gender</nz-form-label>
+  <div class="relative">
+  <input  type="radio" value="Femme" name="Gender" style="height:15px; width:15px; margin :10px"><label style="margin-right: 50px;" style="height:20px; width:20px;" for="Male">Male</label>
+  </div>
+  <div class="relative">
+  <input type="radio" value="Homme" name="Gender" style="height:15px; width:15px; margin :10px" ><label style="margin-right: 50px;" style="height:20px; width:20px;"for="Female">Female</label>
+  </div>
+  <nz-form-label [nzSpan]="7" nzRequired>Age</nz-form-label>
+  <br>
+  <input nz-input type="number"  formControlName="age" placeholder="Age" required> 
+   <div *ngIf="myForm.get('age').touched && myForm.get('age').hasError('required')"> this input Age is required</div><br>
+  <nz-form-label [nzSpan]="7" nzRequired>Description</nz-form-label>
+  <input nz-input type="text" formControlName="description"  placeholder="Description" required>
+  <div *ngIf="myForm.get('description').touched && myForm.get('description').hasError('required')"> this input Description is required</div><br>
+  <nz-form-label [nzSpan]="7" nzRequired>Birthday Date</nz-form-label>
+  <input  nz-input nz-date-picker type="date" formControlName="birthdayDate" placeholder="BirthdayDate" required><br>
+  <nz-form-label [nzSpan]="7" nzRequired>E-mail</nz-form-label>
+  <input nz-input type="text" formControlName="email" placeholder="Email">
+  <div *ngIf="myForm.get('email').touched && myForm.get('email').hasError('required')"> this input Email is required</div>
+  <div *ngIf="myForm.get('email').hasError('email')">Invalid email format</div><br>
+  <nz-form-label [nzSpan]="7" nzRequired>Phone Number</nz-form-label>
+  <input nz-input type="text" formControlName="phoneNumber" placeholder="PhoneNumber" required >
+  <div *ngIf="myForm.get('phoneNumber').touched && myForm.get('phoneNumber').hasError('required')"> this input PhoneNumber is required</div>
+  <div *ngIf="myForm.get('phoneNumber').touched &&  myForm.get('phoneNumber').hasError('minlength')"> this input LastName should be 8 caracters</div><br>
+  <nz-form-label [nzSpan]="7" nzRequired>Address</nz-form-label>
+  <input nz-input type="text" formControlName="adress"placeholder="address" required>
+  <div *ngIf="myForm.get('adress').touched && myForm.get('adress').hasError('required')"> this input Adress is required</div><br>
+  <nz-form-label [nzSpan]="7" nzRequired>Picture</nz-form-label>
+  <input nz-input type="text" formControlName="picture" placeholder="Picture" required>
+  <div *ngIf="myForm.get('picture').touched && myForm.get('picture').hasError('required') "> this input Picture is required</div><br>
+  <nz-form-label [nzSpan]="7" nzRequired>Login</nz-form-label>
+  <input nz-input type="text" formControlName="login" placeholder="login" required>
+  <div *ngIf="myForm.get('login').touched  && myForm.get('login').hasError('required') "> this input Login is required</div><br>
+  <nz-form-label [nzSpan]="7" nzRequired>Password</nz-form-label>
+  <input nz-input type="text" formControlName="password" placeholder="Password" required>
+  <div *ngIf="myForm.get('password').touched  && myForm.get('password').hasError('required')"> this input Password is required</div><br>
+  <nz-form-control [nzOffset]="7" [nzSpan]="12">
+
+  </nz-form-control>
+  <div class="a">
+  <button nz-button nzType="primary" type="submit" (click)="createMessage('success')">Add Employee </button>
+  </div>
+ 
+ 
+  
+
+
+
+  

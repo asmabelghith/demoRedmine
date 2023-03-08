@@ -10,6 +10,7 @@ import { OrdersListComponent } from './e-commerce/orders-list/orders-list.compon
 import { ProductsListComponent } from './e-commerce/products-list/products-list.component';
 import { ProductComponent } from './e-commerce/product/product.component';
 import { EmployeesComponent } from './Employees/employees/employees.component';
+import { EmployeesDetailsComponent } from './Employees/EmployeesDetails/employees-details/employees-details.component';
 
 const routes: Routes = [
     {
@@ -25,6 +26,13 @@ const routes: Routes = [
         component: EmployeesComponent
         
     },
+    {
+        path: 'employeesDetails',
+        component: EmployeesDetailsComponent
+        
+    },
+
+
     {
         path: 'file-manager',
         component: FileManagerComponent,
